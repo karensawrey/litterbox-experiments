@@ -5,7 +5,7 @@ steps:
       cat <<- YAML | buildkite-agent pipeline upload 
         steps:
           - label: Checking permission
-            command: "if [[ \"$$BUILDKITE_UNBLOCKER_TEAMS\" == *\"Cats\"* ]];
+            command: "if [[ \"$$BUILDKITE_UNBLOCKER_TEAMS\" == *\"cats:everyone\"* ]];
               then\n  exit 0\nelse \n  exit -1\nYAML\nfi\n"
             depends_on: "block-step"
       YAML
