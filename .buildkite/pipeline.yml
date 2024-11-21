@@ -11,5 +11,6 @@ steps:
             command: "if [[ \"$$BUILDKITE_UNBLOCKER_TEAMS\" == *\"Cats\"* ]];
               then\n  exit 0\nelse \n  exit -1\nYAML\nfi\n"
             depends_on: "block-step"
+      YAML
       
   - command: "echo next step"
