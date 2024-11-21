@@ -8,11 +8,8 @@ steps:
   
           - label: Checking permission
             key: "approval-step"
-            command: if [[ *"$BUILDKITE_UNBLOCKER_TEAMS"* == *"Cats"* ]]; then
-                exit 0
-              else 
-                exit -1
-              fi
+            command: "if [[ \"$BUILDKITE_UNBLOCKER_TEAMS\" == *\"Cats\"* ]];
+              then\n  exit 0\nelse \n  exit -1\nYAML\nfi\n"
             depends_on: "block-step"
       YAML
       
