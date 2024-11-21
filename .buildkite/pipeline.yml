@@ -1,13 +1,10 @@
 steps:
-  - label: "Generating Block Step"
-    command: |
+  - block: APPROVE BUILD?
+    key: "block-step"
+  - command: |
       cat <<- YAML | buildkite-agent pipeline upload 
         steps:
-          - block: APPROVE BUILD?
-            key: "block-step"
-  
           - label: Checking permission
-            key: "approval-step"
             command: "if [[ \"$$BUILDKITE_UNBLOCKER_TEAMS\" == *\"Cats\"* ]];
               then\n  exit 0\nelse \n  exit -1\nYAML\nfi\n"
             depends_on: "block-step"
