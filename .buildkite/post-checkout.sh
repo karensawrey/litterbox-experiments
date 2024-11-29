@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -n "${BUILDKITE_PULL_REQUEST_BASE_BRANCH-}" ]; then
+  for DIR in "$BUILDKITE_REPO_MIRROR" "$BUILDKITE_BUILD_CHECKOUT_PATH"; do
+    cd "$DIR"
+    git fetch -v origin +"$BUILDKITE_PULL_REQUEST_BASE_BRANCH":"$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+  done
+fi
