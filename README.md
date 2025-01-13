@@ -30,3 +30,4 @@ Freind (spelling mistake: Friend)
 Sun
 Cloud
 Ghosst 
+Change
